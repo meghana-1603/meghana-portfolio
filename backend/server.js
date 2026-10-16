@@ -69,16 +69,21 @@ app.post("/api/contact", async (req, res) => {
   }
 });
 
-mongoose
-  .connect(process.env.MONGODB_URI, {
-    dbName: "meghanaPortfolio",
-  })
-  .then(() => {
+async function startServer() {
+  try {
+    await mongoose.connect(process.env.MONGODB_URI, {
+      dbName: "meghanaPortfolio",
+    });
+
     console.log("MongoDB connected successfully!");
-  })
-  .catch((error) => {
+
+    app.listen(PORT, () => {
+      console.log(`Server running on port ${PORT}`);
+    });
+  } catch (error) {
     console.error("MongoDB connection failed:", error.message);
-  });
-app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
-});
+    process.exit(1);
+  }
+}
+
+startServer();
