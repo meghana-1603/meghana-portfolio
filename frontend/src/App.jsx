@@ -17,34 +17,32 @@ const handleContactSubmit = async (event) => {
   setIsSubmitting(true);
   setFormStatus("");
 
-  try {
-    const response = await fetch(
-      "http://localhost:5000/api/contact",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      }
-    );
-
-    const result = await response.json();
-
-    if (!response.ok) {
-      throw new Error(result.message || "Failed to send message.");
+try {
+  const response = await fetch(
+    "https://formspree.io/f/mnpjlwnn",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(formData),
     }
+  );
 
-    setFormStatus("Message sent successfully!");
-    setFormData({ name: "", email: "", message: "" });
-  } catch (error) {
-    console.error("Contact form error:", error);
-    setFormStatus(
-      "Could not send your message. Please try again."
-    );
-  } finally {
-    setIsSubmitting(false);
+  if (!response.ok) {
+    throw new Error("Failed to send message.");
   }
+
+  setFormStatus("Message sent successfully!");
+  setFormData({ name: "", email: "", message: "" });
+} catch (error) {
+  console.error("Contact form error:", error);
+  setFormStatus("Could not send your message. Please try again.");
+} finally {
+  setIsSubmitting(false);
+}
+
 };
 
   const projects = [
