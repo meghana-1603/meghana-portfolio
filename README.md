@@ -1,6 +1,12 @@
 # Meghana Dasari — Personal Portfolio
 
-A modern personal portfolio website built to showcase my skills, projects, and experience in software development, artificial intelligence, and data science.
+A personal portfolio website showcasing my skills, projects, and experience in software development, artificial intelligence, and data science.
+
+## 🌐 Live Website
+
+**Portfolio:** https://meghana-portfolio-biudpvthc-fi-ve1.vercel.app/
+
+**GitHub Repository:** https://github.com/meghana-1603/meghana-portfolio
 
 ## 🚀 Tech Stack
 
@@ -15,35 +21,40 @@ A modern personal portfolio website built to showcase my skills, projects, and e
 - MongoDB Atlas
 - Mongoose
 
+**Deployment**
+- Vercel
+
 ## ✨ Features
 
 - Personal introduction and portfolio sections
 - Projects showcase
-- Contact form connected to a backend API
-- Contact messages stored in MongoDB Atlas
-- REST API integration
-- Environment-based configuration for sensitive credentials
+- Contact form integrated with Formspree
+- Responsive portfolio interface
+- React-based frontend
+- Backend API implementation in Express.js
 
 ## 📁 Project Structure
 
 ```text
 meghana-portfolio/
-├── frontend/
-│   ├── public/
-│   └── src/
+├── src/
+├── public/
 ├── backend/
 │   ├── server.js
 │   ├── package.json
 │   └── .gitignore
+├── package.json
 └── README.md
 ```
+
+*Note: The structure above is representative. Check the actual repository for the exact folder layout.*
 
 ## ⚙️ Getting Started
 
 ### Prerequisites
 
 - Node.js and npm
-- MongoDB Atlas account
+- Git
 
 ### 1. Clone the repository
 
@@ -52,50 +63,42 @@ git clone https://github.com/meghana-1603/meghana-portfolio.git
 cd meghana-portfolio
 ```
 
-### 2. Set up the backend
+### 2. Install frontend dependencies
+
+```bash
+npm install
+```
+
+### 3. Run the frontend locally
+
+```bash
+npm run dev
+```
+
+Open the local URL shown in your terminal, usually `http://localhost:5173`.
+
+### 4. Backend setup
+
+If you want to run the Express backend, open a terminal and navigate to the `backend` directory:
 
 ```bash
 cd backend
 npm install
 ```
 
-Create a `.env` file inside the `backend` folder and add your MongoDB connection string:
+Configure the required environment variables in a local `.env` file according to the backend implementation. Never commit database credentials or other secrets.
 
-```env
-MONGODB_URI=your_mongodb_connection_string
-```
-
-Replace the placeholder with your own connection string. Never commit your `.env` file or publish database credentials.
-
-Start the backend:
-
-```bash
-node server.js
-```
-
-The backend runs at `http://localhost:5000`.
-
-### 3. Set up the frontend
-
-Open a second terminal from the project root and run:
-
-```bash
-cd frontend
-npm install
-npm run dev
-```
-
-Open the local URL displayed in the terminal, usually `http://localhost:5173`.
+Start the backend using the start command configured in `backend/package.json`.
 
 ## 📬 Contact Form
 
-The contact form sends user-submitted information to the Express backend through a REST API. The backend validates the required fields and stores contact messages in MongoDB Atlas.
+The deployed portfolio contact form uses Formspree to receive submissions. The repository also contains a backend implementation that can be configured separately.
 
 ## 🔐 Security
 
-- Database credentials are stored in environment variables.
-- The backend `.env` file is excluded using `.gitignore`.
-- Never share database passwords or commit secret credentials.
+- Keep credentials in environment variables.
+- Never commit `.env` files or publish database passwords.
+- Configure database access securely before deploying a database-backed service.
 
 ## 👩‍💻 Author
 
@@ -103,8 +106,8 @@ The contact form sends user-submitted information to the Express backend through
 
 B.Tech — Data Science and Artificial Intelligence
 
-GitHub: [@meghana-1603](https://github.com/meghana-1603)
+- GitHub: https://github.com/meghana-1603
 
 ---
 
-Thank you for visiting my portfolio repository!
+Thank you for visiting my portfolio!
