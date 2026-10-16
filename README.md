@@ -4,7 +4,7 @@ A personal portfolio website showcasing my skills, projects, and experience in s
 
 ## 🌐 Live Website
 
-**Portfolio:** https://meghana-portfolio-biudpvthc-fi-ve1.vercel.app/
+**Portfolio:** https://meghana-portfolio-sepia.vercel.app/
 
 **GitHub Repository:** https://github.com/meghana-1603/meghana-portfolio
 
